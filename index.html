@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>STYCH.ai</title>
+    <title>Stych.ai</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,7 @@
     <meta property="og:image" content="https://www.sasban.online/sasban.jpg" />
     <meta property="og:image:width" content="480" />
     <meta property="og:image:height" content="480" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
     <style>
         .row,
         .list-group {
@@ -47,16 +48,16 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row mt-2">
+    <div class="container-fluid bg-white" style="position: sticky;top: 0;z-index: 9999;">
+        <div class="row py-2 border">
             <div class="col-md-4"></div>
             <div class="col-md-4 text-center">
-                <div class="logo" style="background: url(logo.jpg) 50% 50% no-repeat;background-size: contain; height: 60px;"></div>
+                <a href="#" id="hamburger-menu"><div class="logo" style="background: url(logo.jpg) 50% 50% no-repeat;background-size: contain; height: 60px;"></div></a>
             </div>
-            <div class="col-md-4 text-right"><a class="btn btn-sm btn-outline-dark">profile</a> <a
-                    class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-help"></i> help</a> </div>
+            <div class="col-md-4 text-right"><a class="btn btn-sm btn-outline-dark"><i class="fa-solid fa-user"></i> profile</a> <a
+                    class="btn btn-sm btn-outline-danger"><i class="fa-solid fa-question"></i> help</a> </div>
         </div>
-        <div class="row" style="background: #2394;">
+        <div id="menu-block" class="row" style="background: #2394;display: none;">
             <div class="col-md-4 col-lg-2">
                 <ul class="list-group">
                     <li class="list-group-item active"><i class="fa fa-home"></i> Home</li>
@@ -97,7 +98,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-6">
                 <div class="card border-success mb-3">
                     <div class="card-header bg-success text-white"><i class="fa-solid fa-link"></i> Connected</div>
                     <div class="card-body">
@@ -137,7 +138,37 @@
                 
             </div>
         </div>
+        <div class="row text-center">
+           
+            <div class="col-lg-6 border-dark p-2">
+                <h4>Click Rate</h4>
+                <img src="https://inforiver.com/wp-content/uploads/image-111.png" alt="">
+            </div>
+            <div class="col-lg-6">
+                <h4>Sales Comment Type</h4>
+                <img src="https://media.istockphoto.com/id/1264890031/vector/abstract-financial-chart-with-an-uptrend-line-graph.jpg?s=612x612&w=0&k=20&c=nMx9dbo18HokCUB_T7hamkp0CsuXYK3-0W3cP2xdQmE=" alt="">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4>SKU Count</h4>
+                <img src="https://marketplace.canva.com/EAFFKD-i5EY/1/0/1600w/canva-red-modern-line-chart-diagram-produt-data-graph-7H4ho6jvQio.jpg" alt="">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4>Component Maker</h4>
+                <img src="https://inforiver.com/wp-content/uploads/image-111.png" alt="">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4>Color Distribution</h4>
+                <img src="https://blog.hubspot.com/hs-fs/hubfs/Google%20Drive%20Integration/types%20of%20charts_32023-May-22-2023-10-17-25-8599-PM.png?width=600&height=451&name=types%20of%20charts_32023-May-22-2023-10-17-25-8599-PM.png" alt="">
+            </div>
+        </div>
     </div>
+    <script>
+        $(function(){
+            $('#hamburger-menu').on('click', function(){
+                $('#menu-block').slideToggle()
+            })
+        })
+    </script>
 </body>
 
 </html>
